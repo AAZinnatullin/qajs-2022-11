@@ -1,4 +1,5 @@
 import { nameIsValid, fullTrim, getTotal } from '../src/app.js'
+import {test, expect, it, describe} from "@jest/globals";
 
 /**
  * Для проверки, что jest настроен правильно. Можно удалить
