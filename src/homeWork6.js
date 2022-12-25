@@ -4,9 +4,12 @@ function getScores(scores) {
     const objValues = Object.values(scores);
 
     // parse all values of array to number if it possible and return array of numbers
+    // also change NaN values to 0
     const formattedValues = objValues.map((value, index) => {
-        if (typeof (parseInt(objValues[index], 10)) === "number") {
+        if (!isNaN(objValues[index])) {
             return parseFloat(objValues[index], 10);
+        } else {
+            return 0;
         }
     });
 
@@ -16,11 +19,12 @@ function getScores(scores) {
 
 // object balls for every student
 const scores = {
-  Alla: 21,
-  Nick: 20,
-  Valera: 15,
-  Anatoliy: '10',
-  Patric: 10.4,
+    Alla: 21,
+    Nick: 20,
+    Valera: 15,
+    Anatoliy: '10',
+    Patric: 10.4,
+    Lox: "sada"
 };
 
 // log result of function getScores to console
