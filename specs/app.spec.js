@@ -9,15 +9,25 @@ test('adds 1 + 2 to equal 3', () => {
 });
 
 describe('tests for function nameIsValid', () => {
+
+    beforeEach(() => {
+        reporter.epic('Super epic');
+        reporter.feature('New feature');
+        reporter.description('Description');
+    });
+
     it.each([undefined, null, '', true])('checks name with unknown value must be false', (name) => {
+        reporter.story('Unknown data');
         expect(nameIsValid(name)).toBeFalsy();
     });
 
     it('checks name with less than 1 symbol must be false', () => {
+        reporter.story('1 symbol data');
         expect(nameIsValid('n')).toBeFalsy();
     });
 
     it('checks name with 2 symbols must be true', () => {
+        reporter.story('2 symbol data');
         expect(nameIsValid('tr')).toBeTruthy();
     });
 
